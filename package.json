@@ -6,5 +6,8 @@
   "repository": "git@github.com:bozonaro-web-app/quotes-database.git",
   "author": "Anike Arni <anikarni@gmail.com>",
   "license": "GPL-3.0 License",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "firebase-admin": "^9.2.0"
+  }
 }

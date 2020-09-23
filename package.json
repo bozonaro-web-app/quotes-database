@@ -1,0 +1,10 @@
+{
+  "name": "quotes-database",
+  "version": "1.0.0",
+  "description": "Base de dados de frases de Bozo",
+  "main": "src/index.js",
+  "repository": "git@github.com:bozonaro-web-app/quotes-database.git",
+  "author": "Anike Arni <anikarni@gmail.com>",
+  "license": "GPL-3.0 License",
+  "private": false
+}

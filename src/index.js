@@ -1,10 +1,8 @@
 var admin = require("firebase-admin");
 var data = require("./quotes.json");
 
-// Fetch the service account key JSON file contents
 var serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_CREDENTIALS);
 
-// Initialize the app with a custom auth variable, limiting the server's access
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://mitonaro-f6796.firebaseio.com",
@@ -13,8 +11,14 @@ admin.initializeApp({
   }
 });
 
-// The app only has access as defined in the Security Rules
 var db = admin.database();
 var ref = db.ref("/quotes");
-ref.set(data);
+ref.set(data, function(error) {
+  if (error) {
+    console.log("Data could not be saved." + error);
+  } else {
+    console.log("Data saved successfully.");
+  }
+  process.exit()
+});
 

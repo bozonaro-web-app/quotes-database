@@ -1,4 +1,5 @@
 var admin = require("firebase-admin");
+var data = require("./quotes.json");
 
 // Fetch the service account key JSON file contents
 var serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_CREDENTIALS);
@@ -14,6 +15,6 @@ admin.initializeApp({
 
 // The app only has access as defined in the Security Rules
 var db = admin.database();
-var ref = db.ref("/test");
-ref.set({ justATest: true });
+var ref = db.ref("/quotes");
+ref.set(data);
 
